@@ -32,3 +32,10 @@ export interface UserCredentials {
   username: string;
   password: string;
 }
+
+
+export type RecordStringAny = Record<string, unknown>;
+
+export function createRecordStringAny(): RecordStringAny {
+  return {};
+}

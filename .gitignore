@@ -39,9 +39,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# temporary
-src/app/signup
-src/app/signin
-src/app/dashboard
-src/components

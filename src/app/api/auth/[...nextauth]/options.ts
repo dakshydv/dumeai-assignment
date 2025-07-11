@@ -2,7 +2,7 @@ import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 import { DbConnect } from "@/lib/utils";
-import UserModel from "@/models/model";
+import { UserModel } from "@/models/model";
 import { AuthUser, UserCredentials } from "@/lib/utils";
 
 export const authOptions: NextAuthOptions = {
@@ -62,6 +62,9 @@ export const authOptions: NextAuthOptions = {
         session.user.name = token.name;
       }
       return session;
+    },
+    async redirect({baseUrl}) {
+        return `${baseUrl}/dashboard`
     },
   },
   session: {

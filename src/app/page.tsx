@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import { SignInButton } from "@/components/SignInButton";
 import { getServerSession } from "next-auth";
 
 export default async function Home() {
@@ -11,7 +10,7 @@ export default async function Home() {
 
       <header className="top-0 left-0 w-full flex justify-between items-center px-4 sm:px-8 py-4 z-50">
         <div className="font-bold text-white text-xl sm:text-2xl">NoteNest</div>
-        {session?.user?.name ? (
+        {session?.user?.id ? (
           <div className="font-medium bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent text-lg sm:text-2xl">
             <Link
               href="/monitor"
@@ -22,8 +21,8 @@ export default async function Home() {
           </div>
         ) : (
           // <SignInButton />
-          <Link href={"/signin"} className="bg-blue-200 px-2 py-1 text-black">
-            Sign In
+          <Link href={"/signup"} className="bg-blue-200 px-2 py-1 text-black">
+            Sign Up
           </Link>
         )}
       </header>
